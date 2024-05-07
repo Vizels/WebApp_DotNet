@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "N1zKVXO+jlkTd9hIX4XeGbN5f83M15ocLfnZd0zwSA7AWI4PWb64YSG83Eld2znoMIqOlzQi0/sStBaNafKa1g==",
+  "success": true,
+  "projectFilePath": "F:\\Projects\\C#\\WebApp_DotNet\\WebApp_Blazor\\WebApp_Blazor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mirch\\.nuget\\packages\\microsoft.aspnetcore.authentication.certificate\\8.0.4\\microsoft.aspnetcore.authentication.certificate.8.0.4.nupkg.sha512",
+    "C:\\Users\\mirch\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\mirch\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
+    "C:\\Users\\mirch\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\mirch\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\mirch\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\mirch\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
