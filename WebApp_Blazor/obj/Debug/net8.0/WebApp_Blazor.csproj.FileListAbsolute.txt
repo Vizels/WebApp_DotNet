@@ -13,7 +13,6 @@ F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\WebApp_Blazor.Assemb
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\WebApp_Blazor.AssemblyInfo.cs
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\WebApp_Blazor.csproj.CoreCompileInputs.cache
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\WebApp_Blazor.MvcApplicationPartsAssemblyInfo.cache
-F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\WebApp_Blazor.sourcelink.json
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\staticwebassets.build.json
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\staticwebassets.development.json
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\staticwebassets\msbuild.WebApp_Blazor.Microsoft.AspNetCore.StaticWebAssets.props
