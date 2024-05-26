@@ -1,0 +1,87 @@
+﻿@page "/movies/details"
+@inject TestApp.Data.ApplicationDbContext DB
+@using AuthReviews.Components.Movies
+@inject NavigationManager NavigationManager
+@using Microsoft.EntityFrameworkCore
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    @if (movie is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">Title</dt>
+            <dd class="col-sm-10">@movie.Title</dd>
+            <dt class="col-sm-2">Description</dt>
+            <dd class="col-sm-10">@movie.Description</dd>
+            <dt class="col-sm-2">Release Date</dt>
+            <dd class="col-sm-10">@movie.ReleaseDate</dd>
+            <dt class="col-sm-2">Rate</dt>
+            <dd class="col-sm-10">@movie.Rate</dd>
+            <dt class="col-sm-2">Rates Number</dt>
+            <dd class="col-sm-10">@movie.RatesNumber</dd>
+
+            <dt>Movie Poster</dt>
+            <dd><img src=@movie.Image alt="Movie Poster"  width="500" height="600" /></dd>
+        </dl>
+        <EditForm method="post" Model="@movie" OnValidSubmit="AddRating" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" />
+            <div>
+                <label for="rate">Rate this movie:</label>
+                <InputNumber id="rate" @bind-Value=@rating class="form-control" />
+                <button type="submit" class="btn btn-primary">Rate</button>
+            </div>
+        </EditForm>
+
+        <div>
+            <a href="@($"/movies/edit?id={movie.Id}")">Edit</a> |
+            <a href="@($"/movies")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    public Movie? movie;
+    [SupplyParameterFromForm]
+    public int rating { get; set; } = new();
+
+    [SupplyParameterFromQuery]
+    public int Id { get; set; }
+
+    public async Task AddRating()
+    {
+        Console.WriteLine(movie.RatesNumber);
+        Console.WriteLine(movie.Rate);
+        if (movie.RatesNumber == 0)
+        {
+            movie.Rate = rating;
+            movie.RatesNumber++;
+            
+        }
+		else
+		{
+			movie.Rate = (movie.Rate * movie.RatesNumber + rating)/(++movie.RatesNumber);
+		}
+        DB.Movie.Update(movie);
+        await DB.SaveChangesAsync();
+	}
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        movie = await DB.Movie.FirstOrDefaultAsync(m => m.Id == Id);
+
+        if (movie is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}

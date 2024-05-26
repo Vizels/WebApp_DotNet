@@ -1,0 +1,45 @@
+﻿@page "/movies"
+@using Microsoft.AspNetCore.Components.QuickGrid
+@inject TestApp.Data.ApplicationDbContext DB
+@using AuthReviews.Components.Movies
+@rendermode InteractiveServer
+
+<PageTitle>Index</PageTitle>
+
+<h1>Index</h1>
+
+<p>
+    <a href="movies/create">Create New</a>
+</p>
+
+<div class="grid">
+    <QuickGrid Items="@items" Pagination="@pagination">
+        <PropertyColumn Property="@(movie => movie.Title)" Sortable="true" Title="Title" />
+        <PropertyColumn Property="@(movie => movie.Description)" Sortable="true" Title="Description" />
+        <PropertyColumn Property="@(movie => movie.ReleaseDate)" Sortable="true" Title="Release Date" />
+        <PropertyColumn Property="@(movie => movie.Rate)" Sortable="true" Title="Rate" />
+       @*  <PropertyColumn Property="@(movie => movie.RatesNumber)" Sortable="true" Title="Rates Number" /> *@
+        <TemplateColumn Title="Poster">
+            <dd>
+                <img src="@(context.Image)" alt="Movie Poster" style="max-width: 100px; max-height: 150px;" />
+            </dd>
+        </TemplateColumn>
+        <TemplateColumn>
+            <a href="@($"movies/edit?id={context.Id}")">Edit</a> |
+            <a href="@($"movies/details?id={context.Id}")">Details</a> |
+            <a href="@($"movies/delete?id={context.Id}")">Delete</a>
+        </TemplateColumn>
+    </QuickGrid>
+</div>
+
+<Paginator State="@pagination" />
+
+@code {
+    IQueryable<Movie>? items;
+    PaginationState pagination = new PaginationState { ItemsPerPage = 10 };
+
+    protected override async Task OnInitializedAsync()
+    {
+        items = DB.Movie.AsQueryable();
+    }
+}
