@@ -1,4 +1,4 @@
-using AuthReviews.Components;
+﻿using AuthReviews.Components;
 using AuthReviews.Components.Account;
 using AuthReviews.Data;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -26,6 +26,8 @@ builder.Services.AddAuthentication(options =>
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddQuickGridEntityFrameworkAdapter();;
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)

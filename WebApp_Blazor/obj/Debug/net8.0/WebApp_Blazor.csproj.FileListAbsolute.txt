@@ -30,3 +30,4 @@ F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\refint\WebApp_Blazor
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\WebApp_Blazor.pdb
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\WebApp_Blazor.genruntimeconfig.cache
 F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\ref\WebApp_Blazor.dll
+F:\Projects\C#\WebApp_DotNet\WebApp_Blazor\obj\Debug\net8.0\WebApp_Blazor.sourcelink.json
